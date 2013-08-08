@@ -6,29 +6,20 @@
 //  Copyright (c) 2013 Test. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+#import "Specta.h"
+#define EXP_SHORTHAND
+#import "Expecta.h"
+#import "OCMock.h"
 
-@interface SpectaAsyncTestTests : XCTestCase
+SpecBegin(SpectaAsyncTestTests)
 
-@end
+describe(@"Test", ^{
 
-@implementation SpectaAsyncTestTests
+    describe(@"Test describe", ^{
+        it(@"Should not crash when executing this test", ^{
+            expect(1).to.equal(1);
+        });
+    });
+});
 
-- (void)setUp
-{
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown
-{
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
-
-@end
+SpecEnd
