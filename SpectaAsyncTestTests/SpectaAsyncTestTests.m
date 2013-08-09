@@ -16,8 +16,9 @@ SpecBegin(SpectaAsyncTestTests)
 describe(@"Test", ^{
 
     describe(@"Test describe", ^{
-        it(@"Should not crash when executing this test", ^{
+        it(@"Should not crash when executing this test", ^AsyncBlock{
             expect(1).to.equal(1);
+            done();
         });
     });
 });
